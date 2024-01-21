@@ -1,16 +1,21 @@
-### Hi there 👋
+\\ Leer un número entero de dos dígitos y determinar a cuánto es igual la suma de sus dígitos.
+using System;
 
-<!--
-**Smontero3/smontero3** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+public class Exercise27 {
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    public static void Main() {
+        Console.Write("Ingrese un numero de 2 digitos: "); 
+
+        int n = Convert.ToInt32(Console.ReadLine()); 
+
+        int sum = 0; 
+     
+        while (n != 0) {
+            sum += n % 10; 
+            n /= 10; 
+        }
+
+        Console.WriteLine("La suma de los digitos es: " + sum);
+    }
+}
