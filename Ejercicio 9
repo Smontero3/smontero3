@@ -1,0 +1,38 @@
+//9. Leer un número entero de cuatro dígitos y determinar si el segundo dígito es igual al penúltimo.
+
+var stateOfApp = "inicio";
+while (stateOfApp == "inicio") {
+
+    Console.WriteLine("Para acabar el programa escriba: exit\n");
+
+    Console.WriteLine("Digite un numero entero y que sea de 4 digitos");
+
+    var input = Console.ReadLine();
+
+    if (input == null) {
+        return;
+    }
+
+    if (input.Length == 4 && int.TryParse(input, out int numero)) {
+
+        int segundoDigito = (numero / 10) % 10;
+        int penultimoDigito = (numero / 100) % 10;
+        Console.WriteLine($"Segundo Digito: {segundoDigito} y penultimo digito:{penultimoDigito}\n");
+
+        if (segundoDigito == penultimoDigito)
+        {
+            Console.WriteLine("El segundo dígito es igual al penúltimo.");
+        }
+        else
+        {
+            Console.WriteLine("El segundo dígito no es igual al penúltimo.");
+        }
+
+    }
+    else{
+        Console.WriteLine("Entrada no valida, digite un numero entero\n");
+    }
+    if (input == "exit") {
+        stateOfApp = "";
+    }
+}
