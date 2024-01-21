@@ -1,5 +1,4 @@
-\\ Leer un número entero de dos dígitos y determinar si sus dos dígitos son primos.
-
+\\ Leer dos números enteros de dos dígitos y determinar si la suma de los dos números origina un número par.
 using System;
 
 namespace Pares
