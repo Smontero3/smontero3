@@ -1,0 +1,47 @@
+\\ 2.    Leer un número entero de dos dígitos y determinar si es primo y además si es negativo.
+
+using System;
+
+namespace PrimoNegativo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int numero = 0;
+            bool esPrimo = true;
+            bool esNegativo = false;
+
+           
+            Console.WriteLine("Introduce un numero entero de dos digitos:");
+            int.TryParse(Console.ReadLine(), out numero);
+
+            
+            if (numero < 10 || numero > 99)
+            {
+                Console.WriteLine("El numero debe ser de dos digitos.");
+                return;
+            }
+
+            
+            if (numero < 0)
+            {
+                esNegativo = true;
+            }
+
+          
+            for (int i = 2; i <= numero / 2; i++)
+            {
+                if (numero % i == 0)
+                {
+                    esPrimo = false;
+                    break;
+                }
+            }
+
+         
+            Console.WriteLine("El numero {0} es {1} y {2}.", numero, esPrimo ? "primo" : "no primo", esNegativo ? "negativo" : "no negativo");
+        }
+    }
+}
