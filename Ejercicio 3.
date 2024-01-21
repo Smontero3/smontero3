@@ -1,0 +1,57 @@
+using System;
+
+namespace PrimosDosDigitos
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int numero;
+            bool esPrimo1 = true;
+            bool esPrimo2 = true;
+
+           
+            while (!int.TryParse(Console.ReadLine(), out numero))
+            {
+                Console.WriteLine("Introduce un numero entero de dos digitos:");
+            }
+
+           
+            if (numero < 10 || numero > 99)
+            {
+                Console.WriteLine("El numero debe ser de dos digitos.");
+                return;
+            }
+
+            
+            int digito1 = numero / 10;
+            int digito2 = numero % 10;
+
+            
+            esPrimo1 = esPrimo(digito1);
+            esPrimo2 = esPrimo(digito2);
+
+            
+            Console.WriteLine("Los digitos {0} y {1} son {2} y {3}, respectivamente.", digito1, digito2, esPrimo1 ? "primos" : "no primos", esPrimo2 ? "primos" : "no primos");
+        }
+
+        static bool esPrimo(int numero)
+        {
+            if (numero == 1)
+            {
+                return false;
+            }
+
+            for (int i = 2; i <= numero / 2; i++)
+            {
+                if (numero % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+}
