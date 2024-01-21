@@ -1,0 +1,46 @@
+// Leer un número entero de tres dígitos y determinar si algún dígito es múltiplo de los otros.
+
+
+using System;
+
+namespace Multiplos
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int numero;
+            int digito1;
+            int digito2;
+            int digito3;
+
+           
+            Console.WriteLine("Introduce un número entero de tres dígitos:");
+            int.TryParse(Console.ReadLine(), out numero);
+
+            
+            digito1 = numero / 100;
+            digito2 = (numero % 100) / 10;
+            digito3 = numero % 10;
+
+            
+            bool hayMultiplo = false;
+            if (digito1 % digito2 == 0 || digito1 % digito3 == 0)
+            {
+                hayMultiplo = true;
+            }
+            else if (digito2 % digito1 == 0 || digito2 % digito3 == 0)
+            {
+                hayMultiplo = true;
+            }
+            else if (digito3 % digito1 == 0 || digito3 % digito2 == 0)
+            {
+                hayMultiplo = true;
+            }
+
+            
+            Console.WriteLine("El número {0} tiene algún dígito múltiplo de los otros: {1}.", numero, hayMultiplo ? "sí" : "no");
+        }
+    }
+}
