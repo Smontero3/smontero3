@@ -1,0 +1,47 @@
+//Leer tres números enteros y determinar cuál es el mayor. Usar solamente dos variables
+
+
+using System;
+
+namespace MayorDeTres
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int numero1;
+            int numero2;
+            int mayor;
+
+           
+            Console.WriteLine("Introduce el primer número:");
+            int.TryParse(Console.ReadLine(), out numero1);
+
+            Console.WriteLine("Introduce el segundo número:");
+            int.TryParse(Console.ReadLine(), out numero2);
+
+           
+            mayor = numero1;
+
+           
+            if (numero2 > mayor)
+            {
+                mayor = numero2;
+            }
+
+           
+            Console.WriteLine("Introduce el tercer número:");
+            int.TryParse(Console.ReadLine(), out numero2);
+
+           
+            if (numero2 > mayor)
+            {
+                mayor = numero2;
+            }
+
+            
+            Console.WriteLine("El mayor número es {0}.", mayor);
+        }
+    }
+}
