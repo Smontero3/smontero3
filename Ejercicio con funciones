@@ -1,0 +1,18 @@
+using System;
+
+int año;
+Console.Write("Ingresa un año: ");
+año = int.Parse(Console.ReadLine());
+
+if ((año % 4 == 0 && año % 100 != 0) || año % 400 == 0)
+{
+    Console.WriteLine("Es un año bisiesto. ", año);
+}
+
+else
+{
+    Console.WriteLine("No es un año bisiesto. ", año);
+}
+Console.ReadLine();
+
+        
